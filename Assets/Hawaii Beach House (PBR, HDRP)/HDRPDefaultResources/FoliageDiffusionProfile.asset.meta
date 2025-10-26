@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e7c9cc6926e45fe4fad1b70dab6fa8bd
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 245975
+  packageName: Hawaii Beach House (PBR, HDRP)
+  packageVersion: 1.0
+  assetPath: Assets/Hawaii Beach House (PBR, HDRP)/HDRPDefaultResources/FoliageDiffusionProfile.asset
+  uploadId: 560191
