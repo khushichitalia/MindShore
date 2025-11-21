@@ -13,6 +13,7 @@ public class OnSceneLoad : MonoBehaviour
     private void Awake()
     {
         SceneManager.sceneLoaded += PlayEvent;
+        Debug.Log("OnSceneLoad subscribed to sceneLoaded event.");
     }
 
     private void OnDestroy()
@@ -23,5 +24,6 @@ public class OnSceneLoad : MonoBehaviour
     private void PlayEvent(Scene scene, LoadSceneMode mode)
     {
         OnLoad.Invoke();
+        Debug.Log("SCENE LOADED EVENT FIRED: " + scene.name);
     }
 }
