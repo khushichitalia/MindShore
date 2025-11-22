@@ -20,6 +20,7 @@ public class FadeCanvas : MonoBehaviour
     private void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        Debug.Log("FadeCanvas is alive");
     }
 
     public void StartFadeIn()
@@ -48,26 +49,32 @@ public class FadeCanvas : MonoBehaviour
 
     private IEnumerator FadeIn(float duration)
     {
-        float elapsedTime = 0.0f;
+        float elapsedTime = 0f;
 
-        while (alpha <= 1.0f)
+        while (elapsedTime < duration)
         {
-            SetAlpha(elapsedTime / duration);
+            float t = elapsedTime / duration;
+            SetAlpha(t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        SetAlpha(1f);  // ensure perfect final value
     }
 
     private IEnumerator FadeOut(float duration)
     {
-        float elapsedTime = 0.0f;
+        float elapsedTime = 0f;
 
-        while (alpha >= 0.0f)
+        while (elapsedTime < duration)
         {
-            SetAlpha(1 - (elapsedTime / duration));
+            float t = elapsedTime / duration;
+            SetAlpha(1f - t);
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+
+        SetAlpha(0f); // ensure perfect final value
     }
 
     private void SetAlpha(float value)
